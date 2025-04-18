@@ -7,18 +7,19 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <nav>
+    <!-- <nav>
         <li><a href="../"> profile</a></li>
-        <li><a href="../contact/" class="current"> contact</a></li>
+        <li><a href="../contact/"> contact</a></li>
         <li><a href="../projects/"> projects</a></li>
         <li><a href="../cv/"> cv</a></li>
-    </nav>
+    </nav> -->
     <h1>Contact</h1>
-    <form action="mailto:hyukychang@gmail.com" method="GET" enctype="text/plain">
-        <label>
+    <form action="mailto:hyukychang@gmail.com">
+        <!-- remove because this field is not required -->
+        <!-- <label>
             Email:
             <input type="email" name="email" required>
-        </label>
+        </label> -->
         <label>
             Subject:
             <input name="subject" required>
@@ -31,4 +32,5 @@
     </form>
 
 </body>
+<script type="module" src="../global.js"></script>
 </html>

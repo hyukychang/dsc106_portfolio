@@ -97,3 +97,55 @@ form?.addEventListener("submit", (e) => {
   const url = `${form.action}?${params.join("&")}`;
   location.href = url;
 });
+
+// lab4
+export async function fetchJSON(url) {
+  try {
+    // Fetch the JSON file from the given URL
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch projects: ${response.statusText}`);
+    }
+    const data = await response.json();
+    // console.log("data", data);
+    return data;
+  } catch (error) {
+    console.error("Error fetching or parsing JSON data:", error);
+  }
+}
+
+// 1. Defining the Basic Function
+export function renderProjects(
+  project,
+  containerElement,
+  headingLevel = "h2" // 6. Adding Functionality
+) {
+  // console.log("renderProjects", project, containerElement, headingLevel);
+  // 2. Clearing Existing Content
+  containerElement.innerHTML = "";
+
+  const valid = ["h1", "h2", "h3", "h4", "h5", "h6"];
+  headingLevel = headingLevel.toLowerCase();
+  if (!valid.includes(headingLevel)) {
+    console.warn(
+      `renderProjects: invalid headingLevel "${headingLevel}", defaulting to "h2"`
+    );
+    headingLevel = "h2";
+  }
+
+  for (let i = 0; i < project.length; i++) {
+    const prj = project[i];
+    // 3. Creating an <article> Element
+    const article = document.createElement("article");
+    // 4. Defining the Content Dynamically
+    article.innerHTML = `
+    <${headingLevel}>${prj.title}</${headingLevel}>
+    <img src="${prj.image}" alt="${prj.title}">
+    <p>${prj.description}</p>
+    `;
+    containerElement.appendChild(article);
+  }
+}
+export async function fetchGitHubData(username) {
+  return fetchJSON(`https://api.github.com/users/${username}`);
+}

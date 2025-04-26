@@ -163,3 +163,39 @@ label.color-scheme {
     font-size: 80%;
     font-family: inherit;;
 }
+
+#profile-stats dl {
+    /* make the definition list a 4-column grid */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* space between columns and rows */
+    gap: 0.5rem 1rem;
+    /* center everything */
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* labels (dt) on the first row */
+#profile-stats dt {
+    grid-row: 1;
+    margin: 0;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+/* numbers (dd) on the second row */
+#profile-stats dd {
+    grid-row: 2;
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+/* remove the default dl/dd indent */
+#profile-stats dt,
+#profile-stats dd {
+    /* no extra bullet or indent */
+    list-style: none;
+}

@@ -1,5 +1,12 @@
 [
     {
+        "title": "dsc-project2 : Persuasive or Deceptive Visualization?",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "In this assignment, you will grapple with how to design visualizations ethically by crafting two different, opposing perspectives to the same question posed about a single dataset. Once this assignment is complete, we will (anonymously) peer review each other’s visualizations.",
+        "year": 2025,
+        "link": "./projects/project2_report.html"
+    },
+    {
         "title": "yabai-config",
         "image": "https://raw.githubusercontent.com/koekeishiya/yabai/refs/heads/master/assets/banner/banner.svg",
         "description": "local config for yabai window manager",

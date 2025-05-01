@@ -143,6 +143,20 @@ export function renderProjects(
     <img src="${prj.image}" alt="${prj.title}">
     <p>${prj.description}</p>
     `;
+    if (prj.link) {
+      article.style.cursor = "pointer";
+    }
+    article.addEventListener("click", () => {
+      // console.log("clicked", prj.link);
+      if (prj.link) {
+        if (prj.link.startsWith("http")) {
+          window.open(prj.link, "_blank");
+        } else {
+          window.open(BASE_PATH + prj.link, "_blank");
+        }
+      }
+    });
+
     containerElement.appendChild(article);
   }
 }

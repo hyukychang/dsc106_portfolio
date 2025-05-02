@@ -199,3 +199,71 @@ label.color-scheme {
     /* no extra bullet or indent */
     list-style: none;
 }
+
+
+/* description stays its normal size */
+.project-desc {
+    margin: 0;
+}
+
+/* style the year a little more subtly */
+.project-year {
+    margin: 0;
+    font-size: 0.875rem;
+    font-style: italic;
+    color: #555;
+}
+
+#projects-pie-plot {
+    max-width: 20em;
+    margin-block: 2em;
+
+    overflow: visible;
+}
+
+
+/* Each legend item: flex for swatch + label */
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap:0.5rem;
+}
+
+/* The colored swatch square/circle */
+.swatch {
+    display: inline-block;
+    /* allow width/height */
+    width: 1em;
+    aspect-ratio: 1 / 1;
+    /* keep it square */
+    background-color: var(--color);
+    border-radius: 25%;
+    /* slight rounding; use 50% for a circle */
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    width : 100%;
+    /* or center, depending on vertical alignment you like */
+    gap: 2rem;
+    /* space between chart and legend */
+}
+
+.container .legend {
+    gap: 1rem;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+    flex: 1 0;
+    min-width: 9em;
+}
+
+/* 2) SVG: start at 300px wide, but shrink if needed */
+.container svg {
+    flex: 1 1 300px;
+    width: 200px;
+}

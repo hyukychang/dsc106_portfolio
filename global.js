@@ -141,11 +141,15 @@ export function renderProjects(
     article.innerHTML = `
     <${headingLevel}>${prj.title}</${headingLevel}>
     <img src="${prj.image}" alt="${prj.title}">
-    <p>${prj.description}</p>
+    <div class="project-body">
+      <p class="project-desc">${prj.description}</p>
+      <p class="project-year">${prj.year || ""}</p>
+    </div>  
     `;
     if (prj.link) {
       article.style.cursor = "pointer";
     }
+
     article.addEventListener("click", () => {
       // console.log("clicked", prj.link);
       if (prj.link) {

@@ -27,27 +27,32 @@
     {
         "title": "Lorem ipsum dolor sit.",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi dolorum, eum qui ducimus fugit architecto temporibus eveniet laboriosam earum fugiat minus dolor ex nesciunt. Soluta cupiditate dolorem magni alias excepturi!"
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi dolorum, eum qui ducimus fugit architecto temporibus eveniet laboriosam earum fugiat minus dolor ex nesciunt. Soluta cupiditate dolorem magni alias excepturi!",
+        "year": 2020
     },
     {
         "title": "Laboriosam ullam quasi cupiditate.",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Molestiae exercitationem obcaecati repellendus ut eum nam, numquam, reiciendis qui dignissimos illo velit, sapiente veritatis inventore. Beatae ducimus qui, voluptates, illum porro sequi officiis, dolores laboriosam debitis officia consequatur vel."
+        "description": "Molestiae exercitationem obcaecati repellendus ut eum nam, numquam, reiciendis qui dignissimos illo velit, sapiente veritatis inventore. Beatae ducimus qui, voluptates, illum porro sequi officiis, dolores laboriosam debitis officia consequatur vel.",
+        "year": 2021
     },
     {
         "title": "Asperiores sit eveniet deserunt?",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Odio dolorum dignissimos, placeat error doloremque voluptatem fuga nihil alias illo reprehenderit maiores soluta ut veritatis a, sit sapiente. Sapiente suscipit dignissimos unde sequi excepturi voluptatem ad nemo laborum non!"
+        "description": "Odio dolorum dignissimos, placeat error doloremque voluptatem fuga nihil alias illo reprehenderit maiores soluta ut veritatis a, sit sapiente. Sapiente suscipit dignissimos unde sequi excepturi voluptatem ad nemo laborum non!",
+        "year": 2019
     },
     {
         "title": "Animi porro praesentium exercitationem.",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Dolores impedit laudantium quia optio aspernatur cupiditate deleniti veniam? Laborum fuga consequatur eaque, nemo quaerat doloribus. Obcaecati tempore autem amet? Possimus in adipisci optio facere debitis magni distinctio explicabo minima?"
+        "description": "Dolores impedit laudantium quia optio aspernatur cupiditate deleniti veniam? Laborum fuga consequatur eaque, nemo quaerat doloribus. Obcaecati tempore autem amet? Possimus in adipisci optio facere debitis magni distinctio explicabo minima?",
+        "year": 2020
     },
     {
         "title": "Nemo cupiditate quaerat vel!",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Laborum dolore, a optio nesciunt corrupti aliquid. Accusamus sequi exercitationem facilis autem reiciendis laudantium est quaerat! Sed rerum eum voluptatibus inventore ea laudantium aut iusto porro at excepturi, qui error!"
+        "description": "Laborum dolore, a optio nesciunt corrupti aliquid. Accusamus sequi exercitationem facilis autem reiciendis laudantium est quaerat! Sed rerum eum voluptatibus inventore ea laudantium aut iusto porro at excepturi, qui error!",
+        "year": 2019
     },
     {
         "title": "Placeat, illo inventore. Aliquid.",

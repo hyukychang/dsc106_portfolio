@@ -33,18 +33,52 @@ function renderPieChart(projectsGiven) {
   let colors = d3.scaleOrdinal(d3.schemeCategory10);
   // TODO: clear up paths and legends
   // remove all paths and legends
-  d3.select("svg").selectAll("path").remove();
-  d3.select(".legend").selectAll("li").remove();
-  // update paths and legends, refer to steps 1.4 and 2.2
-  newArcs.forEach((arc, idx) => {
-    d3.select("svg").append("path").attr("d", arc).attr("fill", colors(idx));
-  });
+  let svg = d3.select("svg");
+  svg.selectAll("path").remove();
   let legend = d3.select(".legend");
+  legend.selectAll("li").remove();
+  // update paths and legends, refer to steps 1.4 and 2.2
+
+  let selectedIndex = -1;
+
+  newArcs.forEach((arc, idx) => {
+    svg
+      .append("path")
+      .attr("d", arc)
+      .attr("fill", colors(idx))
+      .on("click", (event) => {
+        selectedIndex = selectedIndex === idx ? -1 : idx;
+        svg.selectAll("path").attr("class", (_, i) => {
+          // TODO: filter idx to find correct pie slice and apply CSS from above
+          return i === selectedIndex ? "selected" : "";
+        });
+        legend.selectAll("li").attr("class", (_, i) => {
+          // TODO: filter idx to find correct legend and apply CSS from above
+          return i === selectedIndex ? "selected" : "";
+        });
+
+        if (selectedIndex === -1) {
+          // no slice selected → show all projects
+          // console.log("hi this is rerendering all projects");
+          renderProjects(projectsGiven, projectsContainer, "h2");
+        } else {
+          // console.log("hi this is rerendering filtered projects");
+
+          // filter by the year (or label) of the clicked slice
+          const chosenLabel = newData[idx].label;
+          // console.log("chosenLabel", chosenLabel);
+          const filtered = projectsGiven.filter(
+            (p) => String(p.year || "unknown") === String(chosenLabel)
+          );
+          renderProjects(filtered, projectsContainer, "h2");
+        }
+      });
+  });
+
   newData.forEach((d, idx) => {
     legend
       .append("li")
       .attr("style", `--color:${colors(idx)}`) // set the style attribute while passing in parameters
-      .attr("class", "legend-item") // set the class attribute
       .html(`<span class="swatch"></span> ${d.label} <em>(${d.value})</em>`); // set the inner html of <li>
   });
 }

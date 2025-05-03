@@ -223,7 +223,7 @@ label.color-scheme {
 
 
 /* Each legend item: flex for swatch + label */
-.legend-item {
+.legend li {
     display: flex;
     align-items: center;
     gap:0.5rem;
@@ -245,7 +245,7 @@ label.color-scheme {
     display: flex;
     align-items: center;
     width : 100%;
-    /* or center, depending on vertical alignment you like */
+    /* or center, depending sonon vertical alignment you like */
     gap: 2rem;
     /* space between chart and legend */
 }
@@ -267,3 +267,22 @@ label.color-scheme {
     flex: 1 1 300px;
     width: 200px;
 }
+
+&:has(path:hover) {
+    path:not(:hover) {
+        opacity: 0.5;
+    }
+}
+path {
+    transition: 300ms;
+    cursor: pointer;
+}
+
+.selected {
+    --color: oklch(60% 45% 0) !important;
+
+    &:is(path) {
+        fill: var(--color);
+    }
+}
+

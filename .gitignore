@@ -1,6 +1,6 @@
 .vscode
 .DS_Store
 
-meta/loc.csv
+# meta/loc.csv
 
 node_modules/

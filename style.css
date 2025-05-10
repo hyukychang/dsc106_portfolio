@@ -168,7 +168,8 @@ label.color-scheme {
 .stats dl {
     /* make the definition list a 4-column grid */
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    /* grid-template-columns: 1fr; */
+    grid-template-columns: repeat(auto-fit, 1fr);
     /* space between columns and rows */
     gap: 0.5rem 1rem;
     /* center everything */
@@ -354,4 +355,23 @@ circle {
 
 circle:hover {
     transform: scale(1.5);
+}
+
+circle.selected {
+    fill: #ff6b6b;
+}
+
+@keyframes marching-ants {
+    to {
+        stroke-dashoffset: -8;
+        /* 5 + 3 */
+    }
+}
+
+.selection {
+    fill-opacity: 0.1;
+    stroke: black;
+    stroke-opacity: 0.7;
+    stroke-dasharray: 5 3;
+    animation: marching-ants 2s linear infinite;
 }

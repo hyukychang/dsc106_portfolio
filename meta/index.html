@@ -15,6 +15,29 @@
 
     <h2>Commits by time of day</h2>
     <div id="chart"></div>
+
+    <dl id="commit-tooltip" class="info tooltip" hidden>
+        <!-- Commit SHA & link -->
+        <dt>Commit</dt>
+        <dd>
+            <a href="" id="commit-link" target="_blank">[sha]</a>
+        </dd>
+
+        <!-- Date -->
+        <dt>Date</dt>
+        <dd id="commit-date">YYYY-MM-DD</dd>
+
+        <!-- Time + timezone
+        <dt>Time</dt>
+        <dd id="commit-time">HH:MM TZ</dd>
+
+        <dt>Author</dt>
+        <dd id="commit-author">Author Name</dd>
+
+        <dt>Lines Edited</dt>
+        <dd id="commit-lines">123</dd> -->
+    </dl>
+
     
 </body>
 <script type="module" src="../global.js"></script>

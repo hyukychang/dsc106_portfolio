@@ -164,7 +164,8 @@ label.color-scheme {
     font-family: inherit;;
 }
 
-#profile-stats dl {
+/* #profile-stats dl { */
+.stats dl {
     /* make the definition list a 4-column grid */
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -177,7 +178,8 @@ label.color-scheme {
 }
 
 /* labels (dt) on the first row */
-#profile-stats dt {
+/* #profile-stats dt { */
+.stats dt {
     grid-row: 1;
     margin: 0;
     font-size: 0.875rem;
@@ -186,7 +188,8 @@ label.color-scheme {
 }
 
 /* numbers (dd) on the second row */
-#profile-stats dd {
+/* #profile-stats dd { */
+.stats dd {
     grid-row: 2;
     margin: 0;
     font-size: 2rem;
@@ -194,8 +197,10 @@ label.color-scheme {
 }
 
 /* remove the default dl/dd indent */
-#profile-stats dt,
-#profile-stats dd {
+/* #profile-stats dt, */
+/* #profile-stats dd { */
+.stats dt,
+.stats dd {
     /* no extra bullet or indent */
     list-style: none;
 }
@@ -286,3 +291,19 @@ path {
     }
 }
 
+
+/* Tone down the gridlines */
+.gridlines line {
+    /* stroke: #888; */
+    /* a mid-gray */
+    /* stroke-opacity: 0.5; */
+    /* very faint */
+    /* stroke-width: 1px; */
+    /* keep them thin */
+    shape-rendering: crispEdges;
+}
+
+/* Hide the zero-length domain path that axisLeft draws by default */
+.gridlines path {
+    stroke: none;
+}

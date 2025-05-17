@@ -141,7 +141,9 @@ export function renderProjects(
     // 4. Defining the Content Dynamically
     article.innerHTML = `
     <${headingLevel}>${prj.title}</${headingLevel}>
-    <img src="${prj.image}" alt="${prj.title}">
+    <img src="${prj.image}" alt="${
+      prj.title
+    }" style=" width: 240px;height: 120px;object-fit: cover;"/>
     <div class="project-body">
       <p class="project-desc">${prj.description}</p>
       <p class="project-year">${prj.year || ""}</p>

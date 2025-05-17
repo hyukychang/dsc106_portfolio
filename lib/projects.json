@@ -1,5 +1,12 @@
 [
     {
+        "title": "dsc-lab7 : Geospatial Visualization?",
+        "image": "../images/bikewatching.png",
+        "description": "lab 7 of dsc106. This lab is about geospatial visualization. We will use the bikewatching dataset to visualize the bike usage in Boston.",
+        "year": 2025,
+        "link": "https://hyukychang.github.io/bikewatching/"
+    },
+    {
         "title": "dsc-project2 : Persuasive or Deceptive Visualization?",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "In this assignment, you will grapple with how to design visualizations ethically by crafting two different, opposing perspectives to the same question posed about a single dataset. Once this assignment is complete, we will (anonymously) peer review each other’s visualizations.",

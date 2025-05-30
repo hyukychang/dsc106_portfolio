@@ -2,6 +2,7 @@ import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm";
 
 let xScale;
 let yScale;
+let colors = d3.scaleOrdinal(d3.schemeTableau10);
 
 async function loadData() {
   const data = await d3.csv("loc.csv", (row) => ({
@@ -429,16 +430,16 @@ slider.addEventListener("input", onTimeSliderChange);
 
 onTimeSliderChange();
 
-// This code updates the div info
-filesContainer.select("dt > code").text((d) => d.name);
-filesContainer.select("dd").text((d) => `${d.lines.length} lines`);
-
 function updateFileDisplay(filteredCommits) {
   lines = filteredCommits.flatMap((d) => d.lines);
   files = d3
     .groups(lines, (d) => d.file)
     .map(([name, lines]) => {
       return { name, lines };
+    })
+    .sort((a, b) => {
+      // Sort files by the number of lines in descending order
+      return b.lines.length - a.lines.length;
     });
 
   filesContainer = d3
@@ -453,10 +454,19 @@ function updateFileDisplay(filteredCommits) {
     );
 
   filesContainer.select("dt > code").text((d) => d.name);
-  filesContainer.select("dd").text((d) => `${d.lines.length} lines`);
+  filesContainer
+    .select("dd")
+    .selectAll("div")
+    .data((d) => d.lines)
+    .join("div")
+    .attr("class", "loc")
+    .attr("style", (d) => `--color: ${colors(d.type)}`);
+
   filesContainer.classed("selected", (d) => {
     return filteredCommits.some((commit) =>
       commit.lines.some((line) => line.file === d.name)
     );
   });
 }
+
+updateFileDisplay(filteredCommits);

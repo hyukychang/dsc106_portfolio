@@ -127,7 +127,7 @@ function renderScatterPlot(data, commits) {
 
   dots
     .selectAll("circle")
-    .data(sortedCommits)
+    .data(sortedCommits, (d) => d.id)
     .join("circle")
     .attr("cx", (d) => xScale(d.datetime))
     .attr("cy", (d) => yScale(d.hourFrac))
@@ -347,7 +347,7 @@ function updateScatterPlot(data, commits) {
   const sortedCommits = d3.sort(commits, (d) => -d.totalLines);
   dots
     .selectAll("circle")
-    .data(sortedCommits)
+    .data(sortedCommits, (d) => d.id) // Use commit id as key
     .join("circle")
     .attr("cx", (d) => xScale(d.datetime))
     .attr("cy", (d) => yScale(d.hourFrac))

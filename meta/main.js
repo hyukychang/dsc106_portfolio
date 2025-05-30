@@ -389,6 +389,26 @@ const slider = document.getElementById("commit-progress");
 const timeEl = document.getElementById("commit-time");
 
 let filteredCommits = commits;
+// step 2
+let lines = filteredCommits.flatMap((d) => d.lines);
+let files = d3
+  .groups(lines, (d) => d.file)
+  .map(([name, lines]) => {
+    return { name, lines };
+  });
+
+let filesContainer = d3
+  .select("#files")
+  .selectAll("div")
+  .data(files, (d) => d.name)
+  .join(
+    // This code only runs when the div is initially rendered
+    (enter) =>
+      enter.append("div").call((div) => {
+        div.append("dt").append("code");
+        div.append("dd");
+      })
+  );
 
 function onTimeSliderChange() {
   commitProgress = +slider.value;
@@ -402,8 +422,41 @@ function onTimeSliderChange() {
 
   filteredCommits = commits.filter((d) => d.datetime <= commitMaxTime);
   updateScatterPlot(data, filteredCommits);
+  updateFileDisplay(filteredCommits);
 }
 
 slider.addEventListener("input", onTimeSliderChange);
 
 onTimeSliderChange();
+
+// This code updates the div info
+filesContainer.select("dt > code").text((d) => d.name);
+filesContainer.select("dd").text((d) => `${d.lines.length} lines`);
+
+function updateFileDisplay(filteredCommits) {
+  lines = filteredCommits.flatMap((d) => d.lines);
+  files = d3
+    .groups(lines, (d) => d.file)
+    .map(([name, lines]) => {
+      return { name, lines };
+    });
+
+  filesContainer = d3
+    .select("#files")
+    .selectAll("div")
+    .data(files, (d) => d.name)
+    .join((enter) =>
+      enter.append("div").call((div) => {
+        div.append("dt").append("code");
+        div.append("dd");
+      })
+    );
+
+  filesContainer.select("dt > code").text((d) => d.name);
+  filesContainer.select("dd").text((d) => `${d.lines.length} lines`);
+  filesContainer.classed("selected", (d) => {
+    return filteredCommits.some((commit) =>
+      commit.lines.some((line) => line.file === d.name)
+    );
+  });
+}

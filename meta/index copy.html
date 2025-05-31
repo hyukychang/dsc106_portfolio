@@ -24,32 +24,39 @@
         <div id="scatter-plot">
             <h2>Commits by time of day</h2>
             <div id="chart"></div>
-
+            
             <dl id="commit-tooltip" class="info tooltip" hidden>
                 <!-- Commit SHA & link -->
                 <dt>Commit</dt>
                 <dd>
-                    <a href="" id="commit-link" target="_blank"></a>
+                    <a href="" id="commit-link" target="_blank">[sha]</a>
                 </dd>
+            
+                <!-- Date -->
                 <dt>Date</dt>
-                <dd id="commit-date"></dd>
-                
+                <dd id="commit-date">YYYY-MM-DD</dd>
+            
                 <!-- Time + timezone
-                        <dt>Time</dt>
-                        <dd id="commit-time">HH:MM TZ</dd>
-                
-                        <dt>Author</dt>
-                        <dd id="commit-author">Author Name</dd>
-                
-                        <dt>Lines Edited</dt>
-                        <dd id="commit-lines">123</dd> -->
+                    <dt>Time</dt>
+                    <dd id="commit-time">HH:MM TZ</dd>
+            
+                    <dt>Author</dt>
+                    <dd id="commit-author">Author Name</dd>
+            
+                    <dt>Lines Edited</dt>
+                    <dd id="commit-lines">123</dd> -->
             </dl>
-
             <p id="selection-count">No commits selected</p>
-            <!-- <dl id="language-breakdown" class="stats"></dl> -->
-            <dl id="files"></dl>
         </div>
-    </div>
+    </div>    
+
+    <!-- <div id="time-filter" style="display: flex; align-items: baseline; flex: 1; margin-bottom: 1em;">
+        <label for="commit-progress">
+            <input type="range" id="commit-progress" min="0" max="100"/>
+            <time id="commit-time" style="margin-left: auto;"></time>
+        </label>
+    </div> -->
+    <dl id="files"></dl>
 
     
 </body>

@@ -286,7 +286,6 @@ path {
 
 .selected {
     --color: oklch(60% 45% 0) !important;
-    height: 60px;
 
     &:is(path) {
         fill: var(--color);

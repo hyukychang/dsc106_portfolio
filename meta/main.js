@@ -426,7 +426,7 @@ function onTimeSliderChange() {
   updateScatterPlot(data, filteredCommits);
   updateFileDisplay(filteredCommits);
 }
-
+// slider.value = 100;
 // slider.addEventListener("input", onTimeSliderChange);
 
 // onTimeSliderChange();
